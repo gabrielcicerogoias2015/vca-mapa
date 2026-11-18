@@ -1,0 +1,16 @@
+{
+ "tam": 256,
+ "zMin": 0,
+ "zMax": 6,
+ "ladoMapa": 12000,
+ "mundo": {
+  "xMin": -3000,
+  "xMax": 3000,
+  "yMin": -3000,
+  "yMax": 3000
+ },
+ "metrosPorPixel": 0.5,
+ "cor": "#4a7b9d",
+ "gerado": "2026-11-17T21:14:05",
+ "fonte": "mapa-2026-11-17_21-08-10.png"
+}

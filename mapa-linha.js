@@ -79,12 +79,12 @@
       /* a volta vai por baixo e mais larga: onde as duas dividem a rua, as duas cores aparecem */
       [1, 0].forEach(function (i) {
         if (!sent[i]) { return; }
-        var pts = sent[i].map(ll), larg = i ? 8 : 4;
-        var fundo = L.polyline(pts, { color: '#fff', weight: larg + 3, opacity: 0.85, interactive: false }).addTo(mapa);
+        var pts = sent[i].map(ll), larg = i ? 4 : 2;
+        var fundo = L.polyline(pts, { color: '#fff', weight: larg + 2, opacity: 0.85, interactive: false }).addTo(mapa);
         var linha = L.polyline(pts, { color: COR[i], weight: larg, opacity: 1, interactive: false, lineJoin: 'round' }).addTo(mapa);
         var setas = setasDe(sent[i], 7).map(function (s) {
-          return L.marker([s.y, s.x], { interactive: false, keyboard: false, icon: L.divIcon({ className: 'vl-seta', iconSize: [18, 18], iconAnchor: [9, 9],
-            html: '<svg viewBox="0 0 18 18" width="18" height="18" style="transform:rotate(' + Math.round(s.ang) + 'deg)"><path d="M9 2 L15 15 L9 12 L3 15 Z" fill="' + COR[i] + '" stroke="#fff" stroke-width="1.4"/></svg>' }) });
+          return L.marker([s.y, s.x], { interactive: false, keyboard: false, icon: L.divIcon({ className: 'vl-seta', iconSize: [14, 14], iconAnchor: [7, 7],
+            html: '<svg viewBox="0 0 18 18" width="14" height="14" style="transform:rotate(' + Math.round(s.ang) + 'deg)"><path d="M9 2 L15 15 L9 12 L3 15 Z" fill="' + COR[i] + '" stroke="#fff" stroke-width="1.4"/></svg>' }) });
         });
         cam[i] = { fundo: fundo, linha: linha, setas: setas, larg: larg };
         todos = todos.concat(pts);
@@ -106,8 +106,8 @@
         [0, 1].forEach(function (i) {
           var c = cam[i]; if (!c) { return; }
           var ativo = n === null || n === i;
-          c.linha.setStyle({ opacity: ativo ? 1 : 0.25, weight: n === i ? 6 : c.larg });
-          c.fundo.setStyle({ opacity: ativo ? 0.85 : 0.1, weight: (n === i ? 6 : c.larg) + 3 });
+          c.linha.setStyle({ opacity: ativo ? 1 : 0.25, weight: n === i ? 3.5 : c.larg });
+          c.fundo.setStyle({ opacity: ativo ? 0.85 : 0.1, weight: (n === i ? 3.5 : c.larg) + 2 });
           c.setas.forEach(function (m) { if (n === i) { m.addTo(mapa); } else { mapa.removeLayer(m); } });
         });
         if (n !== null && cam[n]) { cam[n].fundo.bringToFront(); cam[n].linha.bringToFront(); }

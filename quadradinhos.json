@@ -1,5 +1,5 @@
 {
- "pasta": "v3",
+ "pasta": "v4",
  "tam": 256,
  "zMin": 0,
  "zMax": 7,
@@ -13,6 +13,6 @@
  },
  "metrosPorPixel": 0.5,
  "cor": "#4a7b9d",
- "gerado": "2026-11-23T20:57:47",
- "fonte": "mapa-2026-11-23_20-45-47.png"
+ "gerado": "2026-11-26T11:25:43",
+ "fonte": "mapa-2026-11-26_11-09-14-site.png"
 }
